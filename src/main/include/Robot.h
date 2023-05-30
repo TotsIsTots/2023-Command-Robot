@@ -8,8 +8,10 @@
 
 #include <frc/TimedRobot.h>
 #include <frc2/command/CommandPtr.h>
+#include <frc2/command/RunCommand.h>
 
 #include "RobotContainer.h"
+#include "subsystems/Drivetrain.h"
 
 class Robot : public frc::TimedRobot {
  public:
@@ -31,4 +33,5 @@ class Robot : public frc::TimedRobot {
   std::optional<frc2::CommandPtr> m_autonomousCommand;
 
   RobotContainer m_container;
+  Drivetrain m_swerve;
 };
