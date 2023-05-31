@@ -60,13 +60,6 @@ void Robot::TeleopInit() {
  * This function is called periodically during operator control.
  */
 void Robot::TeleopPeriodic() {
-  frc2::RunCommand(
-    [this] {m_swerve.DriveWithJoystick(
-        m_container.m_controller1.GetLeftY(), m_container.m_controller1.GetLeftX(),
-        m_container.m_controller1.GetRightX(), true,
-        m_container.m_controller1.GetLeftTriggerAxis() > 0.5 ? true : false,
-        m_container.m_controller1.GetRightTriggerAxis() > 0.5 ? true : false);},{&m_swerve}
-  )
   
 }
 

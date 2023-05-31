@@ -14,6 +14,14 @@ RobotContainer::RobotContainer() {
 
   // Configure the button bindings
   ConfigureBindings();
+
+    m_swerve.SetDefaultCommand(frc2::RunCommand(
+      [this] {m_swerve.DriveWithJoystick(
+          m_controller1.GetLeftY(), m_controller1.GetLeftX(),
+          m_controller1.GetRightX(), true,
+          m_controller1.GetLeftTriggerAxis() > 0.5 ? true : false,
+          m_controller1.GetRightTriggerAxis() > 0.5 ? true : false);},{&m_swerve}
+  ));
 }
 
 void RobotContainer::ConfigureBindings() {

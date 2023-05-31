@@ -33,5 +33,4 @@ class Robot : public frc::TimedRobot {
   std::optional<frc2::CommandPtr> m_autonomousCommand;
 
   RobotContainer m_container;
-  Drivetrain m_swerve;
 };
